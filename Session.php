@@ -3,6 +3,10 @@ namespace Pandora3\Libs\Session;
 
 use Pandora3\Core\Interfaces\SessionInterface;
 
+/**
+ * Class Session
+ * @package Pandora3\Libs\Session
+ */
 class Session implements SessionInterface {
 
 	/** @var string $id */
