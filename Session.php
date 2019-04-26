@@ -17,7 +17,7 @@ class Session implements SessionInterface {
 	 */
 	public function __construct($id = null) {
 		if ($id === null) {
-			session_start();
+			session_start(); // todo: check already started
 			$id = session_id();
 		}
 		$this->id = $id;
