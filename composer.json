@@ -1,0 +1,17 @@
+{
+	"name": "pandora3/lib-session",
+	"type": "pandora3-lib",
+	"description": "Pandora 3: Lib Session",
+	"homepage": "https://github.com/PandoraTeam/pandora3-lib-Session",
+	"authors": [
+		{
+			"name": "Petr Gostin",
+			"email": "nescafe238@gmail.com",
+			"homepage": "http://u-238.ru",
+			"role": "Developer"
+		}
+	],
+	"extra": {
+		"installer-name": "Session"
+	}
+}
