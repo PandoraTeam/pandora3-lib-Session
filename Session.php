@@ -15,7 +15,7 @@ class Session implements SessionInterface {
 	/**
 	 * @param string|null $id
 	 */
-	public function __construct($id = null) {
+	public function __construct(?string $id = null) {
 		if (is_null($id)) {
 			session_start(); // todo: check already started
 			$id = session_id();
@@ -24,7 +24,7 @@ class Session implements SessionInterface {
 	}
 
 	/**
-	 * @return string
+	 * {@inheritdoc}
 	 */
 	public function getId(): string {
 		return $this->id;
@@ -34,7 +34,7 @@ class Session implements SessionInterface {
 	 * @return static
 	 */
 	public static function continue(): self {
-		return new static();
+		return new static;
 	}
 
 	/**
@@ -43,7 +43,7 @@ class Session implements SessionInterface {
 	 */
 	public static function new(string $id): self {
 		// self::startNewSession($sessionId)
-		return new static();
+		return new static($id);
 	}
 
 	protected static function saveCurrentSession(): void {
@@ -66,8 +66,7 @@ class Session implements SessionInterface {
 	} */
 
 	/**
-	 * @param string $property
-	 * @return mixed
+	 * {@inheritdoc}
 	 */
 	public function get(string $property) {
 		$this->setup();
@@ -75,8 +74,7 @@ class Session implements SessionInterface {
 	}
 
 	/**
-	 * @param string $property
-	 * @param mixed $value
+	 * {@inheritdoc}
 	 */
 	public function set(string $property, $value): void {
 		$this->setup();
@@ -94,7 +92,7 @@ class Session implements SessionInterface {
 	} */
 
 	/**
-	 * @param string $property
+	 * {@inheritdoc}
 	 */
 	public function clear(string $property): void {
 		$this->setup();
